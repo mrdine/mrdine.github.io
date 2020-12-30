@@ -1,0 +1,19 @@
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color:white;
+}
+
+
+
+#cont1 {
+    background-color: rgb(53, 66, 184);
+    padding: 25px;
+}
+
+#cont1 p {
+    color: white;
+    font-size: medium;
+}
