@@ -6,7 +6,12 @@ body {
     background-color:white;
 }
 
-
+header {
+    background-color: rgb(26, 32, 87);
+    color: white;
+    height: 50px;
+    padding: 10px;
+}
 
 #cont1 {
     background-color: rgb(53, 66, 184);

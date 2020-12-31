@@ -12,15 +12,32 @@
 </head>
 
 <body>
+
+
+  <header id="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10">
+        </div>
+        <div class="col-sm-2">
+          <a href="#pt-br"><img class="img-fluid" style="height: 25px;" src="./src/images/br.png"
+              onclick='mudarIdioma("portugues")'></img></a>
+          <a href="#english"><img class="img-fluid" style="height: 25px;" src="./src/images/usa.png"
+              onclick='mudarIdioma("english")'></img></a>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
   <div id="cont1">
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-          <img class="img-fluid rounded-cricle" style="max-width: 100%;"
-                  src="./src/images/me.png" ></img>
+          <img class="img-fluid rounded-cricle" style="max-width: 100%;" src="./src/images/me.png"></img>
         </div>
-        <div class="col-sm-8" style="margin-top: 30px;">
-          <p>Sou Daniel Gomes, desde minha infancia trilhei o caminho da tecnologia com o sonho de me tornar programador e desenvolvedor de jogos digitais. Sou técnico em informática formado pelo IFRN, e aluno do curso de Bacharelado em Tecnologia da Informação na UFRN. Gosto de programar, criar mundos e dar vida às minhas criações através dos jogos, e espero um dia poder trabalhar numa renomada empresa desenvolvedora de jogos.</p>
+        <div class="col-sm-8" id="perfil" style="margin-top: 30px;">
+
         </div>
       </div>
     </div>
@@ -28,47 +45,129 @@
 
   <div id="cont2">
     <div class="container">
-     
+
       <div class="row">
         <h2>Portfólio</h2>
-          
+
         <div class="col-sm-12">
           <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#menu1"><img
-                  src="./src/images/jogos.png"></img></a>
+            <li class="active"><a data-toggle="tab" href="#jogos"><img id="imgjogos" src="./src/images/jogos.png"></img></a>
             </li>
-            <li><a data-toggle="tab" href="#menu2"> <img
-                  src="./src/images/3d.png"></img></a></li>
-            <li><a data-toggle="tab" href="#menu3"><img
-                  src="./src/images/websites.png"></img></a>
+            <li><a data-toggle="tab" href="#3d"> <img id="img3d" src="./src/images/3d.png"></img></a></li>
+            <li><a data-toggle="tab" href="#websites"><img src="./src/images/websites.png"></img></a>
             </li>
-  
+
           </ul>
         </div>
-  
-  
+
+
       </div>
-  
-  
-  
+
+
+
       <div class="tab-content">
-  
-        <div id="menu1" class="tab-pane fade in active">
-          <h2>Jogos</h3>
-          
+        <div id="jogos" class="tab-pane fade in active">
+
         </div>
-        <div id="menu2" class="tab-pane fade">
-          <h2>Modelagem 3D</h3>
-         
+        <div id="3d" class="tab-pane fade">
+
+
         </div>
-        <div id="menu3" class="tab-pane fade">
-          <h2>Websites</h3>
+        <div id="websites" class="tab-pane fade">
+
         </div>
       </div>
+
     </div>
   </div>
-  
+
+  <!--  Conteudo em portugues  -->
+  <div id="perfilPT" style="display: none;">
+    <p>Sou Daniel Gomes, desde minha infancia trilhei o caminho da tecnologia com o sonho de me tornar programador
+      e desenvolvedor de jogos digitais. Sou técnico em informática formado pelo IFRN, e aluno do curso
+      Bacharelado em Tecnologia da Informação na UFRN. Gosto de programar, criar mundos e dar vida às minhas
+      criações através dos jogos, e espero um dia poder trabalhar numa renomada empresa desenvolvedora de jogos.
+    </p>
+  </div>
+  <div id="jogosPT" style="display: none;" class="tab-pane fade in active">
+    <h3>Jogos</h3>
+
+  </div>
+  <div id="3dPT" style="display: none;" class="tab-pane fade">
+    <h3>Modelagem 3D</h3>
+
+  </div>
+  <div id="websitesPT" style="display: none;" class="tab-pane fade">
+    <h3>Websites</h3>
+
+  </div>
+
+  <!--  ---------------  -->
+  <!--  Conteudo em ingles  -->
+  <div id="perfilEN" style="display: none;">
+    <p>
+      I am Daniel Gomes, since my childhood I trod the path of technology with the dream of becoming a programmer
+      and digital game developer. I am a computer technician graduated from IFRN, and a student of the course
+      Bachelor of Information Technology at UFRN. I like to program, create worlds and give life to my
+      creations through games, and I hope one day to be able to work at a renowned game development company.</p>
+  </div>
+  <div id="jogosEN" style="display: none;" class="tab-pane fade in active">
+    <h3>Games</h3>
+
+  </div>
+  <div id="3dEN" style="display: none;" class="tab-pane fade">
+    <h3>3D Modeling</h3>
+
+  </div>
+  <div id="websitesEN" style="display: none;" class="tab-pane fade">
+    <h3>Websites</h3>
+
+  </div>
+  <!--  ---------------  -->
+
+  <script>
+    var idioma = 'portugues'
+
+    let perfil = document.getElementById('perfil')
+    let jogos = document.getElementById('jogos')
+    let m3d = document.getElementById('3d')
+    let websites = document.getElementById('websites')
+
+
+
+    function mudarIdioma(idioma) {
+
+      if (idioma === 'portugues') {
+
+        document.getElementById('imgjogos').src = "./src/images/jogos.png"
+        document.getElementById('img3d').src = "./src/images/3d.png"
+
+
+        perfil.innerHTML = document.getElementById('perfilPT').innerHTML
+        jogos.innerHTML = document.getElementById('jogosPT').innerHTML
+        m3d.innerHTML = document.getElementById('3dPT').innerHTML
+        websites.innerHTML = document.getElementById('websitesPT').innerHTML
+
+
+
+      } else if (idioma === 'english') {
+
+        document.getElementById('imgjogos').src = "./src/images/games.png"
+        document.getElementById('img3d').src = "./src/images/3d modeling.png"
+
+        perfil.innerHTML = document.getElementById('perfilEN').innerHTML
+        jogos.innerHTML = document.getElementById('jogosEN').innerHTML
+        m3d.innerHTML = document.getElementById('3dEN').innerHTML
+        websites.innerHTML = document.getElementById('websitesEN').innerHTML
+
+      }
+    }
+
+    mudarIdioma(idioma)
+  </script>
 
 </body>
+
+
 
 </html>
